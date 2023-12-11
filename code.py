@@ -1,21 +1,23 @@
 from tkinter import *
 from speedtest import Speedtest
 
+
 def test():
     download = Speedtest().download()
-    upload = Speedtest.upload()
-    download_speed = round(download / (10**6), 2)
-    upload_speed = round(upload / (10**6), 2)
+    upload = Speedtest().upload()
+    download_speed = round(download / (10 ** 6), 2)
+    upload_speed = round(upload / (10 ** 6), 2)
 
-    download_label.config(text="Скорость загрузки:\n" + str(download_speed) + "MbPs")
+    download_label.config(text="Скорость загрузки:\n" + str(download_speed) + 'Mb/s')
     upload_label.config(text="Скорость отдачи:\n" + str(upload_speed) + "MbPs")
+
 
 root = Tk()
 
 root.title('SpeedTest')
-root.geometry('400x400')
+root.geometry('300x400')
 
-button = Button(root, text='Click me', width=15, height=2, font=('Arial', 20), bg='MidnightBlue', fg='orangered')
+button = Button(root, text='Click me', width=15, height=2, font=('Arial', 20), bg='MidnightBlue', fg='yellow', borderwidth=5, relief=GROOVE)
 button.pack(side=BOTTOM, pady=40)
 
 download_label = Label(root, text='Скорость загрузки:\n-', font=('Arial', 20))
